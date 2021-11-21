@@ -27,7 +27,12 @@
 .App-link {
   color: #61dafb;
 }
-
+.featured_artists{
+  background-color: #5c5c5c69;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* display: flex; */
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

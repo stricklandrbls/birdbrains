@@ -3,7 +3,7 @@ import logo from "../../assets/images/logo.svg";
 
 function Navbar(){
     return(
-        <div class="w3-top">
+        <div class="w3-top w3-row">
             <div class="w3-bar navbar w3-mobile w3-white">
                 <img src={logo} class="logo w3-left"/>
                 <a class="w3-bar-item w3-button w3-padding-32 w3-hover-white" href="">Home</a>
