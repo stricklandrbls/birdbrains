@@ -17,15 +17,21 @@ const initialInfo = {
 
 function App() {
   const [info, setInfo] = useState(initialInfo);
+
   const init = async () => {
+      // Check if window has the metamask extension
       if(window.ethereum){
+        // Async function to retrieve accounts from metamask
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
+        setInfo({...initialInfo, account: accounts[0]});
+
+        // Async function to retrieve the active network on their wallet.
         const networkId = await window.ethereum.request({
           method: "net_version",
         });
-        console.log(networkId);
+        
         if(networkId == 80001){
           let web3 = new Web3(window.ethereum);
           
@@ -43,7 +49,7 @@ function App() {
   return (
     <span class="w3-container">
       <div class="w3-row">
-        <Navbar/>
+        <Navbar account={info.account}/>
       </div>
       <br></br><br></br>
       <div class="w3-row">

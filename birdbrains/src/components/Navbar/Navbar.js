@@ -1,7 +1,12 @@
 import "./Navbar.css";
 import logo from "../../assets/images/logo.svg";
 
-function Navbar(){
+function Navbar(props){
+    let acc = "";
+    if(props.account){
+        const len = props.account.length;
+        acc = props.account.substring(0, 5) + "..." + props.account.substring(len - 4, len);
+    }
     return(
         <div class="w3-top w3-row">
             <div class="w3-bar navbar w3-mobile w3-white">
@@ -17,6 +22,7 @@ function Navbar(){
                     </div>
                 </div>
                 <a class="w3-bar-item w3-button w3-padding-32 w3-hover-white" href="">Contact</a>
+                <div class="w3-bar-item w3-padding-32 w3-right">{acc} | {props.network}</div>
             </div>
         </div>
     );
