@@ -11,8 +11,9 @@ import React from 'react';
 const initialInfo = {
   connected: false,
   status: null,
-  account: null,
-  contract: null
+  account: "",
+  contract: null,
+  error: null
 };
 
 function App() {
@@ -24,19 +25,26 @@ function App() {
         // Async function to retrieve accounts from metamask
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
-        });
-        setInfo({...initialInfo, account: accounts[0]});
+        })
+        .then(() => {
 
-        // Async function to retrieve the active network on their wallet.
-        const networkId = await window.ethereum.request({
-          method: "net_version",
+          // Async function to retrieve the active network on their wallet.
+          const networkId = window.ethereum.request({
+            method: "net_version",
+          });
+        })
+        .then(() =>{
+
+          setInfo({...initialInfo, account: accounts[0]});
+
+        })
+        .catch((err) =>{
+
+          setInfo({...initialInfo, connected: false, account: ""});
+
         });
-        
-        if(networkId == 80001){
-          let web3 = new Web3(window.ethereum);
-          
-        }
-        console.log(accounts);
+
+        console.log(info);
 
       }
       else{
@@ -49,7 +57,7 @@ function App() {
   return (
     <span class="w3-container">
       <div class="w3-row">
-        <Navbar account={info.account}/>
+        <Navbar account={info.account} error={info.error}/>
       </div>
       <br></br><br></br>
       <div class="w3-row">
