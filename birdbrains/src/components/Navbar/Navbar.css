@@ -1,4 +1,10 @@
 .logo{
-    max-width: 250px;
+    max-width: 300px;
     max-height: 300px;
+}
+.navbar{
+    font-family: Futura, Helvetica;
+}
+.navbar button{
+    color:rgb(138, 138, 138);
 }
