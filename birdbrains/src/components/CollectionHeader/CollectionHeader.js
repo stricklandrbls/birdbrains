@@ -49,25 +49,31 @@ function CollectionHeader(props){
 
         }
     }
+
+    const withdraw = async () => {
+        infoObj.contract.methods.withdraw().send({ from: infoObj.account })
+        .then(results => {
+            console.log(results);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+    const test = async () =>{
+
+    }
+
     const mint = async () => {
-        console.log(infoObj.account);
-        console.log(infoObj.contract);
-        // try{
-        //     web3.eth.getBalance(infoObj.account, (err, wei) =>{
-        //         console.log(wei);
-        //     })
-        // }catch(err){
-        //     console.log(err);
-        // }
-        const gas = await infoObj.contract.methods.mint(1).estimateGas();
-        console.log(gas);
-        // infoObj.contract.methods.mint(1).send({from: account, gas})
-        // .then(result =>{
-        //     console.log(result);
-        // })
-        // .catch(err =>{
-        //     console.log(err);
-        // })
+        const price = await infoObj.contract.methods.cost().call();
+        infoObj.contract.methods.mint(1).send({from: infoObj.account, value: price})
+        .then(results => {
+            console.log(results);
+        })
+        .catch(err => {
+            console.log(err);
+            return;
+        })
     }
     useEffect(() =>{
         init();
@@ -85,8 +91,8 @@ function CollectionHeader(props){
                 <ConnectButton status={infoObj.status} onClick={connectWallet} text={infoObj.account} network={infoObj.network} />
                 </div>
                 <button class="w3-button w3-round w3-mobile w3-border" onClick={mint}>Mint</button>
-                <button class="w3-button w3-round w3-mobile w3-border" >Get NFTs</button>
-                <button class="w3-button w3-round w3-mobile w3-border" >Withdraw</button>
+                <button class="w3-button w3-round w3-mobile w3-border" onClick={test}>Test</button>
+                <button class="w3-button w3-round w3-mobile w3-border" onClick={withdraw}>Withdraw</button>
             </div>
         </div>
     )
