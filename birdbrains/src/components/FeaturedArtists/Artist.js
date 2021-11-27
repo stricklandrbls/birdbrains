@@ -14,7 +14,7 @@ function Artist(props){
                 <div class="w3-display-container w3-margin w3-large">
                     <h2>{props.name}</h2><br></br>
                     <div class="w3-display-bottomleft">
-                        {props.socials.map(account => { console.log(account)} )}
+                        {props.socials.map(account => (<p>{account.instagram}</p>) )}
                     </div>
                 </div>
             </div>
