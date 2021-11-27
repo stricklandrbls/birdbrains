@@ -4,7 +4,30 @@
 }
 .navbar{
     font-family: Futura, Helvetica;
+    width: auto;
 }
 .navbar button{
     color:rgb(138, 138, 138);
+}
+@media screen and (min-width: 601px){
+    .navbar-desktop{
+        display: block;
+    }
+    .navbar-mobile{
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 600px) {
+    .navbar-desktop{
+        display: none;
+    }
+    .navbar-mobile{
+        display: block;
+    }
+    .logo{
+        max-width: 275px;
+        max-height: 250px;
+    }
 }

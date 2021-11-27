@@ -16,3 +16,12 @@
     color: white;
     font-family: 'Yellowtail', cursive;
 }
+
+@media screen and (max-width: 600px) {
+    .banner img{
+        height: 30em;
+        width: 100%;
+        object-fit: cover;
+        object-position: 40% 60%;
+    }
+}

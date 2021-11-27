@@ -23,18 +23,31 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1.8312693"
-     inkscape:cx="250.64582"
-     inkscape:cy="110.03297"
-     inkscape:window-width="2560"
-     inkscape:window-height="1382"
-     inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:zoom="0.91563465"
+     inkscape:cx="288.32461"
+     inkscape:cy="90.101439"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     inkscape:window-x="2560"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      width="645px" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <font
+       horiz-adv-x="1024"
+       id="font2634"
+       inkscape:label="font 1">
+      <font-face
+         units-per-em="1024"
+         id="font-face2636"
+         font-family="SVGFont 1" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph2638" />
+    </font>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -48,15 +61,15 @@
        y="71.402641" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:91.1665px;line-height:1.25;font-family:MuseoModerno;-inkscape-font-specification:'MuseoModerno, @wght=400';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 400;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.22139;stroke-miterlimit:4;stroke-dasharray:none"
-       x="-3.5341997"
-       y="65.944077"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90.076px;line-height:1.25;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display, @wght=400';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 400;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.20678;stroke-miterlimit:4;stroke-dasharray:none"
+       x="-3.4387538"
+       y="65.155296"
        id="text20958"
-       transform="scale(0.97744297,1.0230776)"><tspan
+       transform="scale(0.96575142,1.0354631)"><tspan
          sodipodi:role="line"
          id="tspan1152"
-         x="-3.5341997"
-         y="65.944077"
-         style="stroke-width:1.22139">SMARTCHAIN</tspan></text>
+         x="-3.4387538"
+         y="65.155296"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90.076px;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display, @wght=400';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 400;stroke-width:1.20678">SMARTCHAIN</tspan></text>
   </g>
 </svg>

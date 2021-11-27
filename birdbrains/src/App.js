@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <span class="w3-container w3-mobile">
+    <span class="w3-container">
       <div class="w3-row w3-mobile">
         <Navbar onWalletConnect={setWalletInfo} walletObj={walletInfo}/>
       </div>
