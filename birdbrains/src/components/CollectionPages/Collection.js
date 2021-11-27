@@ -28,13 +28,10 @@ function Collection(){
         initMetaMask();
     }, []);
     return(
-        <div class="collection-banner w3-display-container w3-center w3-padding">
+        <div class="collection-banner w3-display-container w3-center w3-padding ">
             <br></br><br></br>
-            <div class="w3-cell-row">
-                <div class="w3-cell"></div>
-                <h1 class="w3-cell">{params.collectionName}</h1>
-                <a class="w3-button w3-border">Connect Wallet</a>
-            </div>
+            <h1 class="">{params.collectionName}</h1>
+            <a class="w3-button w3-border">Connect Wallet</a>
         </div>
     )
 }
