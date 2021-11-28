@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import ConnectButton from "../Navbar/Button/ConnectButton";
 import contract from "../../contract/contract.json";
-
+import "./Collectionheader.css";
 import { useEffect, useState } from "react";
 
 let initialInfo = {
@@ -81,18 +81,18 @@ function CollectionHeader(props){
     }, []);
 
     return(
-        <div class="w3-cell-row w3-row w3-padding-32 w3-mobile w3-margin-top">
+        <div class="collection-header w3-cell-row w3-row w3-padding-32 w3-mobile w3-margin-top">
             <div class="w3-display-container w3-center w3-mobile w3-cell">
                 <div class="w3-display-container">
-                <h1>Collections Page</h1>
+                <h1>Collections</h1>
                 {/* <button class="w3-display-right w3-margin-right">CLickmee</button> */}
                 {/* <ConnectButton status={infoObj.status} onClick={connectWallet} text={infoObj.account} network={infoObj.network} /> */}
 
-                <ConnectButton status={infoObj.status} onClick={connectWallet} text={infoObj.account} network={infoObj.network} />
+                {/* <ConnectButton status={infoObj.status} onClick={connectWallet} text={infoObj.account} network={infoObj.network} /> */}
                 </div>
-                <button class="w3-button w3-round w3-mobile w3-border" onClick={mint}>Mint</button>
+                {/* <button class="w3-button w3-round w3-mobile w3-border" onClick={mint}>Mint</button>
                 <button class="w3-button w3-round w3-mobile w3-border" onClick={test}>Test</button>
-                <button class="w3-button w3-round w3-mobile w3-border" onClick={withdraw}>Withdraw</button>
+                <button class="w3-button w3-round w3-mobile w3-border" onClick={withdraw}>Withdraw</button> */}
             </div>
         </div>
     )

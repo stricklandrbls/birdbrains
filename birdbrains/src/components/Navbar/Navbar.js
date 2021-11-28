@@ -32,9 +32,9 @@ function Navbar(props){
                     <i class="w3-xxlarge fa fa-bars w3-cell-middle w3-padding-left" onClick={mobileMenuToggle}></i>
                 </div>
                 <div id="navbar-mobile-menu" class="w3-hide w3-margin-top w3-animate-opacity">
-                    <a class="w3-bar-item w3-button w3-mobile w3-large">Home</a>
+                    <a class="w3-bar-item w3-button w3-mobile w3-large" href="/">Home</a>
                     <a class="w3-bar-item w3-button w3-mobile w3-large">About</a>
-                    <a class="w3-bar-item w3-button w3-mobile w3-large">Collections</a>
+                    <a class="w3-bar-item w3-button w3-mobile w3-large" href="/Collections">Collections</a>
                     <a class="w3-bar-item w3-button w3-mobile w3-large">Contact</a>
                 </div>
             </div>

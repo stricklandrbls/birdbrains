@@ -4,7 +4,7 @@
 }
 .navbar{
     font-family: Futura, Helvetica;
-    width: auto;
+    /* width: auto; */
 }
 .navbar button{
     color:rgb(138, 138, 138);
