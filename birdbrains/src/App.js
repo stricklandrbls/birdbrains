@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Index from "./components/Index";
 import Navbar from './components/Navbar/Navbar';
 import Collections from './components/Collections';
+import Collection from "./components/CollectionPages/Collection"
 import { useState, useEffect } from 'react';
 import Web3 from "web3";
 
@@ -38,6 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index/>} />
         <Route path="/Collections" element={<Collections walletObj={walletInfo}/>} />
+        <Route path="/Collections/:collectionName" element={<Collection />} />
       </Routes>
     </span>
   );
