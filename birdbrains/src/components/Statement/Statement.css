@@ -2,3 +2,9 @@
     padding-top: 25px;
     padding-bottom: 25px;
 }
+.statement h2{
+    font-family: 'Playfair Display';
+}
+.statement p, h3{
+    font-family: Futura, Helvetica;
+}

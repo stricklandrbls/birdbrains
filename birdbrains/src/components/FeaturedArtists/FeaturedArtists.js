@@ -7,7 +7,7 @@ function FeaturedArtists(){
             socials: [
                 {instagram: "@tylerteatime"},
                 {twitter: "@tttime"},
-                {website: "https://tylerteatime.com"}
+                {desktop: "https://tylerteatime.com"}
             ]},
         {   name: "Jason Wong",
             socials: [
@@ -16,7 +16,7 @@ function FeaturedArtists(){
             ]},
         {   name: "Brooke Clarke",
             socials: [
-                {website: "https://bclarke.com"}
+                {desktop: "https://bclarke.com"}
             ]}
     ]
     
