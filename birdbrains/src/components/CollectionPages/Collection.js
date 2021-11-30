@@ -27,16 +27,25 @@ function Collection(){
             updateWalletData({...walletDataObj, error: "No MetaMask"});
         }
     }
+    const initOnChanged = () => {
+        if(window.ethereum?.isMetaMask){
+            window.ethereum.on("accountsChanged", () =>{ window.location.reload(); });
+            window.ethereum.on("chainChanged", () => { window.location.reload(); });
+        }
+        else{
 
+        }
+    }
     useEffect(() => {
         initMetaMask();
+        initOnChanged();
     }, []);
     return(
         <div class="collection-banner w3-display-container w3-center w3-padding ">
             <br></br><br></br>
-            <h1 class="">{params.collectionName}</h1>
+            <h1 class="w3-border-bottom">{params.collectionName}</h1>
             <div class="w3-border w3-round">
-                <WalletStatus data={walletDataObj} />
+                <WalletStatus data={walletDataObj} connect={initMetaMask} />
             </div>
         </div>
     )
@@ -46,6 +55,9 @@ function WalletStatus(props){
 
     if (props.data.error = null){
         return( <div class="w3-border w3-round w3-padding w3-red">Can't Connect...</div> )
+    }
+    else if(props.data.account == null){
+        return( <div class="w3-border w3-round w3-padding" onClick={props.connect}>Connect Wallet</div> )
     }
     else{
         let address = "";
