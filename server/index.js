@@ -10,8 +10,10 @@ const app       = express();
 //     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 // })
 
+const db_uri = process.env.MONGODB_URI;
+
 app.get("/api", (req, res) =>{
-    res.json( {message: "Hello from server!"} );
+    res.json( {message: db_uri} );
 });
 
 app.listen(PORT, () =>{
