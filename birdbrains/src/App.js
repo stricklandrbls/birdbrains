@@ -18,6 +18,7 @@ const _walletInfo = {
 };
 
 function App() {
+  const [data, getData] = useState(null);
   const [walletInfo, setWalletInfo] = useState(_walletInfo);
   const walletInfoDataHandler = (walletInfoData) =>{
     console.log("In App.js");
@@ -29,7 +30,16 @@ function App() {
     });
     console.log(walletInfoData);
   }
-
+  useEffect(() =>{
+    fetch("/api")
+    .then((res) =>{
+      res = res.json()
+      .then((data) =>{
+        getData(data.message);
+      })
+    })
+    // .then((data) => getData(data.message));
+  }, [])
   return (
     <span class="w3-container">
       <div class="w3-row ">
@@ -41,6 +51,8 @@ function App() {
         <Route path="/Collections" element={<Collections walletObj={walletInfo}/>} />
         <Route path="/Collections/:collectionName" element={<Collection />} />
       </Routes>
+
+      <p>{!data ? "" : data}</p>
     </span>
   );
 }
