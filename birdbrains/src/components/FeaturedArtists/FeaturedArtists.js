@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { api_uri } from "../../utils/globals";
 import Artist from "./Artist";
 import "./FeaturedArtists.css";
 function FeaturedArtists(){
@@ -17,9 +19,19 @@ function FeaturedArtists(){
         {   name: "Brooke Clarke",
             socials: [
                 {desktop: "https://bclarke.com"}
-            ]}
+        ]}
     ]
-    
+    const[databaseArtists, updateDatabaseArtists] = useState(null);
+    useEffect(()=>{
+        fetch(api_uri)
+        .then((res)=>{
+            res = res.json()
+            .then((final)=>{
+                console.log(final)
+            })
+        })
+        .catch()
+    },[])
     return (
         <span>
             <table class="featured-desktop w3-table w3-responsive w3-mobile">
