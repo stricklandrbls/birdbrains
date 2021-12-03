@@ -12,6 +12,7 @@ function Artist(props){
     // ))
     return(
         <td>
+            <a href="/Collections">
             <div class="artist w3-card w3-round-large w3-hover-shadow w3-white">
                 <img src={logo} class="card_art w3-round-large" />
                 <div class="w3-display-container w3-margin w3-large">
@@ -21,6 +22,7 @@ function Artist(props){
                     </div>
                 </div>
             </div>
+            </a>
         </td>
     );
 }
