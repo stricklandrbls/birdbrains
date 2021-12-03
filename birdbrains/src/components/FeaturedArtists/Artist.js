@@ -7,9 +7,9 @@ import Web3 from "web3";
 function Artist(props){
     const [counter, setCounter] = useState(0);
 
-    let accounts = props.socials.map(account =>(
-        console.log(account)
-    ))
+    // let accounts = props.socials.map(account =>(
+    //     console.log(account)
+    // ))
     return(
         <td>
             <div class="artist w3-card w3-round-large w3-hover-shadow w3-white">
