@@ -37,11 +37,11 @@ function FeaturedArtists(){
     // console.log(databaseArtists);
     return (
         <span>
-            <table class="featured-desktop w3-table w3-responsive w3-mobile">
+            <table class="featured-desktop w3-table">
             <tr>
                 <Artist name={databaseArtists[0].name} socials={databaseArtists[0].socials} />
                 <Artist name={databaseArtists[1].name} socials={databaseArtists[1].socials} />
-                {/* <Artist name={databaseArtists[2].name} socials={databaseArtists[2].socials} /> */}
+                <Artist name={databaseArtists[2].name} socials={databaseArtists[2].socials} />
             </tr>
             </table>
             <div class="featured-mobile w3-cell-row w3-padding">

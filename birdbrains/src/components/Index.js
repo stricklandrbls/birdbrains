@@ -5,17 +5,6 @@ import Statement from './Statement/Statement';
 import FeaturedArtists from './FeaturedArtists/FeaturedArtists';
 
 function Index(){
-  // const[data, getData] = useState(null);
-  // useEffect(() =>{
-  //   fetch(api_uri)
-  //   .then((res) =>{
-  //     res = res.json()
-  //     .then((data) =>{
-  //       getData(data.message);
-  //     })
-  //   })
-  //   // .then((data) => getData(data.message));
-  // }, [])
 
   return (
         <span>
@@ -29,7 +18,6 @@ function Index(){
           <br></br>
             <FeaturedArtists />
           </div>
-          {/* <p>{!data? "":data}</p> */}
         </span>
       );
 }

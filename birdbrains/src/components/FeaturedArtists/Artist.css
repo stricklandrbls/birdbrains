@@ -1,7 +1,29 @@
 .card_art{
     max-width: 100%;
-    max-height: 100%;
 }
-.artist h1, h2{
+.artist :hover img{
+    width: 90em;
+    object-fit: cover;
+    object-position: 30% 10%;
+}
+.artist h1, h2, h3{
     font-family: "Playfair Display";
+}
+@media screen and (min-width: 1024px){
+    .featured-desktop{
+        display: block;
+    }
+    .featured-mobile{
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 1024px){
+    .featured-desktop{
+        display: none;
+    }
+    .featured-mobile{
+        display: block;
+    }
 }

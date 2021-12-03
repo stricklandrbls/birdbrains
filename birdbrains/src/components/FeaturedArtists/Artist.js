@@ -12,16 +12,25 @@ function Artist(props){
     // ))
     return(
         <td>
-            <a href="/Collections">
-            <div class="artist w3-card w3-round-large w3-hover-shadow w3-white">
-                <img src={logo} class="card_art w3-round-large" />
-                <div class="w3-display-container w3-margin w3-large">
-                    <h2>{props.name}</h2><br></br>
-                    <div class="w3-display-bottomleft">
+            <a href="/Collections" class=" featured-desktop artist w3-card w3-cell w3-round-large">
+                <div class=" w3-display-container w3-responsive">
+                    <img src={logo} class="card_art w3-round-large" />
+                    <div class="w3-display-bottomleft w3-padding-small w3-white w3-round-large w3-responsive">
+                        <h3>{props.name}</h3><br></br>
+                        <div class="w3-display-bottomleft w3-padding-small">
+                            {props.socials.map(account => (<p>{account.instagram}</p>) )}
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/Collections" class="featured-mobile artist w3-card w3-cell w3-round-large">
+                <div class="w3-display-container w3-responsive">
+                    <img src={logo} class="card_art w3-round-large" />
+                    <h2 class="w3-padding">{props.name}</h2><br></br>
+                    <div class="w3-display-bottomleft w3-padding">
                         {props.socials.map(account => (<p>{account.instagram}</p>) )}
                     </div>
                 </div>
-            </div>
             </a>
         </td>
     );
