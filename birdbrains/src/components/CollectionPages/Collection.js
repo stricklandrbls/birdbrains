@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
+import {api_uri} from "../../utils/globals"
+
 import "./CollectionPages.css"
 
 import Web3 from "web3";
@@ -14,6 +16,7 @@ const walletData = {
 function Collection(){
     const params = useParams();
     const [walletDataObj, updateWalletData] = useState(walletData);
+    const [collctionData, getCollectionData] = useState(null);
 
     const initMetaMask = async () =>{
         if(window.ethereum?.isMetaMask){
@@ -27,6 +30,24 @@ function Collection(){
             updateWalletData({...walletDataObj, error: "No MetaMask"});
         }
     }
+    const initCollectionData = async () =>{
+        fetch(api_uri+"Collections/"+params.collectionName)
+        .then((data) =>{
+            if(data.ok){
+
+                data.json()
+                .then((results) =>{
+    
+                })
+            }
+            else{
+                console.log("404")
+            }
+        })
+        .catch((err) => {
+
+        })
+    }
     const initOnChanged = () => {
         if(window.ethereum?.isMetaMask){
             window.ethereum.on("accountsChanged", () =>{ window.location.reload(); });
@@ -37,6 +58,7 @@ function Collection(){
         }
     }
     useEffect(() => {
+        initCollectionData();
         initMetaMask();
         initOnChanged();
     }, []);

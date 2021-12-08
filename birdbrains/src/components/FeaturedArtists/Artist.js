@@ -6,16 +6,13 @@ import Web3 from "web3";
 
 function Artist(props){
     const [counter, setCounter] = useState(0);
-
-    // let accounts = props.socials.map(account =>(
-    //     console.log(account)
-    // ))
+    const link = "/Artist/" + props.name;
     return(
         <td>
-            <a href="/Collections" class=" featured-desktop artist w3-card w3-cell w3-round-large">
+            <a href={link} class=" featured-desktop artist w3-card w3-cell w3-round-large">
                 <div class=" w3-display-container w3-responsive">
                     <img src={logo} class="card_art w3-round-large" />
-                    <div class="w3-display-bottomleft w3-padding-small w3-white w3-round-large w3-responsive">
+                    <div class="glass w3-display-bottomleft w3-padding-small w3-round-large w3-responsive">
                         <h3>{props.name}</h3><br></br>
                         <div class="w3-display-bottomleft w3-padding-small">
                             {props.socials.map(account => (<p>{account.instagram}</p>) )}
@@ -23,7 +20,7 @@ function Artist(props){
                     </div>
                 </div>
             </a>
-            <a href="/Collections" class="featured-mobile artist w3-card w3-cell w3-round-large">
+            <a href={link} class="featured-mobile artist w3-card w3-cell w3-round-large">
                 <div class="w3-display-container w3-responsive">
                     <img src={logo} class="card_art w3-round-large" />
                     <h2 class="w3-padding">{props.name}</h2><br></br>
