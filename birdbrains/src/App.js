@@ -4,6 +4,7 @@ import Index from "./components/Index";
 import Navbar from './components/Navbar/Navbar';
 import Collections from './components/Collections';
 import Collection from "./components/CollectionPages/Collection"
+import NotFound from "./components/NotFound"
 import { useState, useEffect } from 'react';
 import Web3 from "web3";
 
@@ -38,9 +39,11 @@ function App() {
       </div>
       <br></br><br></br>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Index/>} />
         <Route path="/Collections" element={<Collections walletObj={walletInfo}/>} />
         <Route path="/Collections/:collectionName" element={<Collection />} />
+        {/* <Route path="/Artists/:artist" element={<Artist />} */}
       </Routes>
     </span>
   );

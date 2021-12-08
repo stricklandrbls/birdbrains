@@ -17,9 +17,9 @@ function Collection(){
 
     const initMetaMask = async () =>{
         if(window.ethereum?.isMetaMask){
-            const accounts = await window.ethereum.enable();
-            const address = await window.ethereum.request({ method: "eth_requestAccounts" });
-            const network = await window.ethereum.request({ method: "net_version" });
+            const accounts  = await window.ethereum.enable();
+            const address   = await window.ethereum.request({ method: "eth_requestAccounts" });
+            const network   = await window.ethereum.request({ method: "net_version" });
             console.log(accounts[0], address[0], network);
             updateWalletData({ ...walletDataObj, account: address[0], network: network });
         }
