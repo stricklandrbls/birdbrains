@@ -63,16 +63,21 @@ function Collection(){
         initOnChanged();
     }, []);
     return(
+        <CollectionBanner data={walletDataObj} connect={initMetaMask} params={params} />
+    )
+}
+function CollectionBanner(props){
+
+    return(
         <div class="collection-banner w3-display-container w3-center w3-padding ">
             <br></br><br></br>
-            <h1 class="w3-border-bottom">{params.collectionName}</h1>
+            <h1 class="w3-border-bottom">{props.params.collectionName}</h1>
             <div class="w3-border w3-round">
-                <WalletStatus data={walletDataObj} connect={initMetaMask} />
+                <WalletStatus data={props.data} connect={props.connect} />
             </div>
         </div>
     )
 }
-
 function WalletStatus(props){
 
     if (props.data.error = null){
