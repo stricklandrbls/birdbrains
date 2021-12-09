@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {useParams} from "react-router-dom";
-import {api_uri} from "../../utils/globals"
+import { useParams } from "react-router-dom";
+import { api_uri } from "../../utils/globals"
 
 import "./CollectionPages.css"
 
@@ -15,8 +15,8 @@ const walletData = {
 
 function Collection(){
     const params = useParams();
-    const [walletDataObj, updateWalletData] = useState(walletData);
-    const [collctionData, getCollectionData] = useState(null);
+    const [walletDataObj, updateWalletData]     = useState(walletData);
+    const [collectionData, getCollectionData]   = useState(null);
 
     const initMetaMask = async () =>{
         if(window.ethereum?.isMetaMask){
