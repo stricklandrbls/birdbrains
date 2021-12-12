@@ -1,3 +1,24 @@
 .collections-display{
+
     background-color: #eeececf1;
+    /* display: flex; */
+}
+
+@media screen and (min-width: 1024px){
+    .desktop{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 1024px){
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
 }

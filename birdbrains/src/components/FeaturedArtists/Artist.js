@@ -10,7 +10,7 @@ function Artist(props){
     return(
         <td>
             <a href={link} class=" featured-desktop artist w3-card w3-cell w3-round-large">
-                <div class=" w3-display-container w3-responsive">
+                <div class="w3-display-container w3-responsive">
                     <img src={logo} class="card_art w3-round-large" />
                     <div class="glass w3-display-bottomleft w3-padding-small w3-round-large w3-responsive">
                         <h3>{props.name}</h3><br></br>
