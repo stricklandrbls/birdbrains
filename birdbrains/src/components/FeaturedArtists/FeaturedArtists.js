@@ -3,27 +3,9 @@ import { api_uri } from "../../utils/globals";
 import Artist from "./Artist";
 import "./FeaturedArtists.css";
 function FeaturedArtists(){
-    const databaseArtistsInit = [
-        {
-            name: "Tyler Conrad", 
-            socials: [
-                {instagram: "@tylerteatime"},
-                {twitter: "@tttime"},
-                {desktop: "https://tylerteatime.com"}
-            ]},
-        {   name: "Jason Wong",
-            socials: [
-                {instagram: "@JWong"},
-                {twitter: "@JJWongTwitter"}
-            ]},
-        {   name: "Brooke Clarke",
-            socials: [
-                {desktop: "https://bclarke.com"}
-        ]}
-    ]
-    const[databaseArtists, updateDatabaseArtists] = useState(databaseArtistsInit);
+    const[databaseArtists, updateDatabaseArtists] = useState([]);
     useEffect(()=>{
-        fetch(api_uri+"artists/")
+        fetch(api_uri+"artists")
         .then((res)=>{
             res = res.json()
             .then((final)=>{
@@ -33,10 +15,13 @@ function FeaturedArtists(){
         .catch()
 
     },[])
+    if(!databaseArtists){
+        return null;
+    }
 
-    // console.log(databaseArtists);
     return (
         <span>
+
             <table class="featured-desktop w3-table">
             <tr>
                 <Artist name={databaseArtists[0].name} socials={databaseArtists[0].socials} />
