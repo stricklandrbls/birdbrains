@@ -16,7 +16,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract PetPack is ERC721Enumerable, Ownable {
+contract BirdBrains is ERC721Enumerable, Ownable {
     using Strings for uint256;
    
 
@@ -65,6 +65,7 @@ contract PetPack is ERC721Enumerable, Ownable {
 
             for (uint256 i = 1; i <= _mintAmount; i++) {
                 _safeMint(msg.sender, supply + i); // Uses second paramters to index the baseURI
+                removeWhitelistUser(msg.sender);
             }
         }
         else{
@@ -108,7 +109,8 @@ contract PetPack is ERC721Enumerable, Ownable {
     }
     // public views
     function calculateCost(uint amount) public view returns (uint) { return cost * amount; }
-   
+    function getWhitelistCount() public view returns (uint) { return whitelistCount; }
+
     // only devs
     function withdraw() public payable onlyOwner {
         uint _40 = address(this).balance * 40 / 100;
@@ -120,7 +122,8 @@ contract PetPack is ERC721Enumerable, Ownable {
         require(payable(developers["ALLISON"]).send(_40));
        
     }
-   
+    
+    
     //only owner
     function setCost(uint256 _newCost) public onlyOwner { cost = _newCost; }
 
@@ -132,10 +135,24 @@ contract PetPack is ERC721Enumerable, Ownable {
 
     function pause(bool _state) public onlyOwner { paused = _state; }
  
-    function whitelistUser(address _user) public onlyOwner { require(whitelistCount < 2, "Whitelisted limit reached"); whitelisted[_user] = true; whitelistCount++; }
- 
     function removeWhitelistUser(address _user) public onlyOwner { delete whitelisted[_user]; whitelistCount--;}
-   
-    function addDeveloperAddress(string memory name, address _address) public onlyOwner { developers[name] = payable(_address); }
+
+    function whitelistUser(address _user) public onlyOwner { 
+        require(whitelistCount <= 20, "Whitelisted limit reached"); 
+        require(!whitelisted[_user], "User is already whitelisted...");
+
+        whitelisted[_user] = true; 
+        whitelistCount++; 
+    }
+
+    function whitelistUsers(address[] memory _users) public onlyOwner{
+        for(uint i = 0; i < _users.length; i++){
+            whitelistUser(_users[i]);
+            //TODO: Add Logic to bypass if address is whitelisted in the middle of the array
+            // if(whitelisted[_users[i])
+            //      continue...;
+        }
+    }
+ 
 
 }
