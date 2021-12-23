@@ -3,9 +3,9 @@ import "./Collection.css"
 
 function Collection(props){
     return(
-        <div>
+        <div styles="text-align: center; width: 100%">
             <div class="desktop">
-                <div class="collection w3-row w3-card w3-round-xlarge w3-hover-shadow w3-margin-top w3-white">
+                <div class="collection w3-card w3-round-xlarge w3-hover-shadow w3-margin-top w3-white">
                     <div class="w3-display-container">
                         <img src={logo} class="w3-round-xlarge"/>
                         <div class="glass w3-display-bottomleft w3-round-xlarge w3-padding w3-responsive">

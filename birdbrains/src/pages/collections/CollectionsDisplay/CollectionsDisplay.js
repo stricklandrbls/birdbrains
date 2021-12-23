@@ -3,7 +3,7 @@ import { api_uri } from "../../../utils/globals";
 import Collection from "./Collection";
 import "./CollectionsDisplay.css";
 function CollectionsDisplay(){
-    const [collectionsData, populateCollectionsData] = useState([]);
+    const [collectionsData, populateCollectionsData] = useState(null);
 
     //TODO: Pull Collections list from database.
     useEffect(()=>{
@@ -20,14 +20,12 @@ function CollectionsDisplay(){
     console.log(collectionsData);
     return(
         <div class="collections-display w3-display-container w3-padding">
-            <div class="desktop">
-                <Collection />
-                <Collection />
-                <Collection />
-                <Collection />
-                <Collection />
-                <Collection />
-            </div>
+            <Collection />
+            <Collection />
+            <Collection />
+            <Collection />
+            <Collection />
+            <Collection />
             <div class="mobile">
                 <div class="w3-cell-row w3-mobile">
                     <Collection />
