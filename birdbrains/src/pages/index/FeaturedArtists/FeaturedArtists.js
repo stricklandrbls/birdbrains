@@ -3,7 +3,7 @@ import { api_uri } from "../../../utils/globals";
 import Artist from "./Artist";
 import "./FeaturedArtists.css";
 function FeaturedArtists(){
-    const[databaseArtists, updateDatabaseArtists] = useState([]);
+    const[databaseArtists, updateDatabaseArtists] = useState(null);
     useEffect(()=>{
         fetch(api_uri+"artists")
         .then((res)=>{
