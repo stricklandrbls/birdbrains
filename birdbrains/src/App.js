@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import { Route, Routes } from "react-router-dom";
-import Index from "./components/Index";
+
+import Index from './pages/index/Index';
+import Collections from './pages/collections/Collections';
+import Collection from "./pages/collection/Collection"
+
 import Navbar from './components/Navbar/Navbar';
-import Collections from './components/Collections';
-import Collection from "./components/CollectionPages/Collection"
 import NotFound from "./components/NotFound"
+
 import { useState, useEffect } from 'react';
 import Web3 from "web3";
 

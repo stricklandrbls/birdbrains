@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api_uri } from "../../utils/globals"
 
-import "./CollectionPages.css"
+import "./CollectionPages/CollectionPages.css"
 
 import Web3 from "web3";
 

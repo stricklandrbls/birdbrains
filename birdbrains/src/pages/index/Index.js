@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { api_uri } from '../utils/globals';
 import Banner from './Banner/Banner';
 import Statement from './Statement/Statement';
 import FeaturedArtists from './FeaturedArtists/FeaturedArtists';

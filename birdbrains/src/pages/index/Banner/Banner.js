@@ -1,5 +1,5 @@
 import "./Banner.css";
-import banner_img from "../../assets/images/artist.jpg";
+import banner_img from "../../../assets/images/artist.jpg";
 
 function Banner() {
     return(

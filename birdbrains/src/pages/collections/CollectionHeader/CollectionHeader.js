@@ -1,6 +1,5 @@
 import Web3 from "web3";
-import ConnectButton from "../Navbar/Button/ConnectButton";
-import contract from "../../contract/contract.json";
+import contract from "../../../contract/contract.json";
 import "./Collectionheader.css";
 import { useEffect, useState } from "react";
 

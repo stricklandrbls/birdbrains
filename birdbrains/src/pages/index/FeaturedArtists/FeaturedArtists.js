@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { api_uri } from "../../utils/globals";
+import { api_uri } from "../../../utils/globals";
 import Artist from "./Artist";
 import "./FeaturedArtists.css";
 function FeaturedArtists(){
@@ -16,6 +16,7 @@ function FeaturedArtists(){
 
     },[])
     if(!databaseArtists){
+        console.log("Database artists is null, bud");
         return null;
     }
 

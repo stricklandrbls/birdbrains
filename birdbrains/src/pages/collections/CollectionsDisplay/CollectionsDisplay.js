@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api_uri } from "../../utils/globals";
+import { api_uri } from "../../../utils/globals";
 import Collection from "./Collection";
 import "./CollectionsDisplay.css";
 function CollectionsDisplay(){

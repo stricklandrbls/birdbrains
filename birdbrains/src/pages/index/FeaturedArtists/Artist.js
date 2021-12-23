@@ -1,4 +1,4 @@
-import logo from "../../assets/images/image.png";
+import logo from "../../../assets/images/image.png";
 import { useState, useEffect } from 'react';
 import "./Artist.css";
 

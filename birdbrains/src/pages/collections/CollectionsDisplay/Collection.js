@@ -1,4 +1,4 @@
-import logo from "../../assets/images/image.png"
+import logo from "../../../assets/images/image.png"
 import "./Collection.css"
 
 function Collection(props){
